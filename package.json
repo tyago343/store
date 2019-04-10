@@ -1,0 +1,33 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "This is an E-commerce from scratch",
+  "main": "./server/index.js",
+  "scripts": {
+    "bundle": "webpack --watch --color",
+    "start": "nodemon ./server/index.js"
+  },
+  "author": "Santiago Casanova",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "crypto": "^1.0.1",
+    "express": "^4.16.4",
+    "path": "^0.12.7",
+    "pg": "^7.9.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "sequelize": "^5.2.12",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-stage-0": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "nodemon": "^1.18.10",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
