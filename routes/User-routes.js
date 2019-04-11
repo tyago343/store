@@ -22,5 +22,9 @@ router.post('/', (req, res) => {
     })
 })
 router.get('/:id', (req, res) => {
-    
+    const { id } = req.params
+    User.findByPk(id)
+    .then(response => {
+        res.send(response)
+    })
 })
