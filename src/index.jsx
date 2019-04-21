@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import Main from './components/Main.jsx';
-import { BrowseRouter, Route } from 'react-redux';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Store from './redux/store.js';
-import Provider from 'react-redux';
+import {Provider} from 'react-redux';
 ReactDOM.render(
     <Provider store={Store}>
-        <BrowseRouter>
+        <BrowserRouter>
             <Route path='/' component={Main} />
-        </BrowseRouter>
-    </Provider> ,
+        </BrowserRouter>
+    </Provider>,
     document.getElementById('app')
-)
+);

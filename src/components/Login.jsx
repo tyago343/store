@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-export default Login = (props) => {
+export default (props) => {
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
     const handleInputChange = (evt) => {

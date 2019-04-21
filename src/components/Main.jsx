@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { Link, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Login from './Login';
 
-Main = () => {
-
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Main)
+export default () => {
+    return (
+        <div>
+            <Switch>
+                <Route path="/login" component={Login}/>
+            </Switch>
+        </div>
+    )
+};
