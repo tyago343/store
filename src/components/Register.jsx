@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { registerUserUtil } from '../redux/actions/UserActions';
 import { connect } from 'react-redux';
 const Register = (props) => {
@@ -6,6 +6,7 @@ const Register = (props) => {
     const [name, setName] = useState('');
     const [lastName, setLastName] = useState('');
     const [password, setPassword] = useState('');
+    const [userCreated, setUserCreated] = useState(false);
     const handleInputChange = (evt) => {
         evt.preventDefault();
         let field = evt.target.name;
@@ -29,7 +30,15 @@ const Register = (props) => {
        evt.preventDefault();
        props.handleSubmit({ name, lastName, email, password})
    }
+   useEffect(() =>{
+       if(props.user.id){
+           setUserCreated(true)
+       }
+   }, [props.user])
     return (
+        userCreated ? 
+        'esta creado wachin' 
+        : 
         <section>
             <form onSubmit={handleSubmit}>
                 <h3>Iniciar sesión</h3>
@@ -56,7 +65,10 @@ const Register = (props) => {
         </section>
     )
 }
-const mapDispatchToProps = (dispatch) =>({
+const mapDispatchToProps = dispatch =>({
     handleSubmit: ({name, lastName, email, password}) => dispatch(registerUserUtil({name, lastName, email, password}))
 })
-export default connect(null, mapDispatchToProps)(Register);
+const mapStateToProps = state => ({
+    user: state.user
+})
+export default connect(mapStateToProps, mapDispatchToProps)(Register);

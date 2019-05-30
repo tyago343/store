@@ -14,7 +14,7 @@ export default (props) => {
     };
     return (
         <section>
-            <form action="" method="post">
+            <form>
                 <h3>Iniciar sesión</h3>
                 <div>
                     <label htmlFor="email">Correo electrónico</label>
