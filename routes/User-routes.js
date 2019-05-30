@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
 })
 router.post('/', (req, res) => {
     const { body } = req;
+    console.log(req)
     User.create({
         id: uuid(),
         name: body.name,
@@ -27,4 +28,6 @@ router.get('/:id', (req, res) => {
     .then(response => {
         res.send(response)
     })
-})
+});
+
+module.exports = router;

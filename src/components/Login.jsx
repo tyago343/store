@@ -11,7 +11,6 @@ export default (props) => {
         }else{
             setPassword(value)
         }
-
     };
     return (
         <section>
@@ -26,7 +25,7 @@ export default (props) => {
                     <input type="password" name="password" value={password} onChange={handleInputChange}/>
                 </div>
                 <div>
-                    <button type="submit"></button>
+                    <button type="submit">Enviar</button>
                 </div>
             </form>
         </section>

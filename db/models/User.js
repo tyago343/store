@@ -3,9 +3,14 @@ const db = require ('../index.js');
 const crypto = require ('crypto');
 
 const User = db.define('user', {
+    id:{
+        type: Sequelize.STRING,
+        allowNull: false,
+        primaryKey: true
+    },
     name: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
     },
     lastName: {
         type: Sequelize.STRING,
@@ -28,13 +33,13 @@ const User = db.define('user', {
     },
     salt: {
         type: Sequelize.STRING,
-        allowNull: false
     }
 })
 User.passwordSalt = () => crypto.randomBytes(20).toString('hex');
 User.prototype.passwordHash = (password, salt) => crypto.createHmac('sha1', salt).update(password).digest('hex');
-User.hook('beforeCreate', (user) => {
+User.beforeCreate(user => {
     user.salt = User.passwordSalt();
+    let { password, salt } = user;
     user.password = user.passwordHash(password, salt)
-})
+});
 module.exports = User;
