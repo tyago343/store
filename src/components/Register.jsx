@@ -38,7 +38,7 @@ const Register = (props) => {
     return (
         userCreated ? 
         'esta creado wachin' 
-        : 
+        :
         <section>
             <form onSubmit={handleSubmit}>
                 <h3>Iniciar sesión</h3>
