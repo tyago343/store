@@ -39,29 +39,32 @@ const Register = (props) => {
         userCreated ? 
         'esta creado wachin' 
         :
-        <section>
-            <form onSubmit={handleSubmit}>
-                <h3>Iniciar sesión</h3>
-                <div>
-                    <label htmlFor="name">Nombre</label>
-                    <input type="text" name="name" value={name} onChange={handleInputChange}/>
-                </div>
-                <div>
-                    <label htmlFor="lastName">Apellido</label>
-                    <input type="text" name="lastName" value={lastName} onChange={handleInputChange}/>
-                </div>
-                <div>
-                    <label htmlFor="email">Correo electrónico</label>
-                    <input type="text" name="email" value={email} onChange={handleInputChange}/>
-                </div>
-                <div>
-                    <label htmlFor="password">Contraseña</label>
-                    <input type="password" name="password" value={password} onChange={handleInputChange}/>
-                </div>
-                <div>
-                    <button type="submit">Enviar</button>
-                </div>
-            </form>
+        <section  className="container">
+            <article className="row">
+                <form className="col-md-12" style={{textAlign: "center"}} onSubmit={handleSubmit}>
+                    <h1>El almacen de Jorge</h1>
+                    <h3>Registrate!</h3>
+                    <div>
+                        <label htmlFor="name">Nombre</label>
+                        <input type="text" name="name" value={name} onChange={handleInputChange}/>
+                    </div>
+                    <div>
+                        <label htmlFor="lastName">Apellido</label>
+                        <input type="text" name="lastName" value={lastName} onChange={handleInputChange}/>
+                    </div>
+                    <div>
+                        <label htmlFor="email">Correo electrónico</label>
+                        <input type="text" name="email" value={email} onChange={handleInputChange}/>
+                    </div>
+                    <div>
+                        <label htmlFor="password">Contraseña</label>
+                        <input type="password" name="password" value={password} onChange={handleInputChange}/>
+                    </div>
+                    <div>
+                        <button type="submit">Enviar</button>
+                    </div>
+                </form>
+            </article>
         </section>
     )
 }

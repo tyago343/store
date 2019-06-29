@@ -7,12 +7,12 @@ import Header from './Header';
 
 export default () => {
     return (
-        <div>
+        <main>
             <Header />
             <Switch>
                 <Route path="/login" component={Login}/>
                 <Route path="/register" component={Register}/>
             </Switch>
-        </div>
+        </main>
     )
 };
