@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default () =>{
     return (
-        <nav className="rojo">
+        <nav>
             <Link to="/register">Registrate loro</Link>
             <Link to="/login">Logueate wachin</Link>
         </nav>

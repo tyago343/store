@@ -1,6 +1,7 @@
 const User = require ('../db/models/User.js');
 const router = require ('express').Router();
 const uuid = require ('uuid/v4');
+const passport = require ('passport')
 
 router.get('/', (req, res) => {
     User.findAll()
@@ -10,7 +11,6 @@ router.get('/', (req, res) => {
 })
 router.post('/', (req, res) => {
     const { body } = req;
-    console.log(req)
     User.create({
         id: uuid(),
         name: body.name,
@@ -28,6 +28,14 @@ router.get('/:id', (req, res) => {
     .then(response => {
         res.send(response)
     })
+});
+router.post('/login', passport.authenticate('local'), (req, res) => {
+    const authenticated = req.isAuthenticated();
+    if(authenticated){
+        res.send({
+           ok: 'joya'
+        }) 
+    }
 });
 
 module.exports = router;
