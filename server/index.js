@@ -31,7 +31,7 @@ passport.use(new LocalStrategy({
         if (!user) {
           return done(null, false, { message: 'Incorrect username.' });
         }
-        if (user.passHash(password, user.salt) != user.password) {
+        if (user.passwordHash(password, user.salt) != user.password) {
           return done(null, false, { message: 'Incorrect password.' });
         }
         return done(null, user);

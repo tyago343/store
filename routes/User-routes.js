@@ -33,7 +33,10 @@ router.post('/login', passport.authenticate('local'), (req, res) => {
     const authenticated = req.isAuthenticated();
     if(authenticated){
         res.send({
-           ok: 'joya'
+            id:req.user.id,
+            name: req.user.name,
+            lastName: req.user.lastName,
+            email: req.user.email,
         }) 
     }
 });

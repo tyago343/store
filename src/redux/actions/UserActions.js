@@ -22,6 +22,6 @@ export const registerUserUtil = (user) => (dispatch) => {
 } 
 export const loginUserUtil = (user) => (dispatch) => {
     axios.post('/api/v1/users/login', user)
-    .then(({user})=>dispatch(loginUser(user)))
+    .then(({data})=>dispatch(loginUser(data)))
     .catch(err=>alert('Ingresaste mal el usuario o la contraseña!'))
 }
