@@ -1,10 +1,9 @@
-const User = require ('../db/models/User.js');
+const User = require ('../db/models/Product.js');
 const router = require ('express').Router();
 const uuid = require ('uuid/v4');
-const passport = require ('passport')
 
 router.get('/', (req, res) => {
-    User.findAll()
+    Product.findAll()
     .then(response=>{
         res.send(response.data)
     })
@@ -24,21 +23,10 @@ router.post('/', (req, res) => {
 })
 router.get('/:id', (req, res) => {
     const { id } = req.params
-    User.findByPk(id)
+    Product.findByPk(id)
     .then(response => {
         res.send(response)
     })
-});
-router.post('/login', passport.authenticate('local'), (req, res) => {
-    const authenticated = req.isAuthenticated();
-    if(authenticated){
-        res.send({
-            id:req.user.id,
-            name: req.user.name,
-            lastName: req.user.lastName,
-            email: req.user.email,
-        }) 
-    }
 });
 
 module.exports = router;
