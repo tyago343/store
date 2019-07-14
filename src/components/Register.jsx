@@ -42,26 +42,26 @@ const Register = (props) => {
         <section  className="container">
             <article className="row">
                 <form className="col-md-12" style={{textAlign: "center"}} onSubmit={handleSubmit}>
-                    <h1>El almacen de Jorge</h1>
+                    <h1>El almacén de Jorge</h1>
                     <h3>Registrate!</h3>
-                    <div>
-                        <label htmlFor="name">Nombre</label>
-                        <input type="text" name="name" value={name} onChange={handleInputChange}/>
+                    <div className="form-group row">
+                        <label className="col-sm-2 col-form-label" htmlFor="name">Nombre</label>
+                        <input className="form-control col-sm-10" type="text" name="name" value={name} onChange={handleInputChange}/>
+                    </div>
+                    <div className="form-group row">
+                        <label className="col-sm-2 col-form-label" htmlFor="lastName">Apellido</label>
+                        <input className="form-control col-sm-10" type="text" name="lastName" value={lastName} onChange={handleInputChange}/>
+                    </div>
+                    <div className="form-group row">
+                        <label className="col-sm-2 col-form-label" htmlFor="email">Correo electrónico</label>
+                        <input className="form-control col-sm-10" type="text" name="email" value={email} onChange={handleInputChange}/>
+                    </div>
+                    <div className="form-group row">
+                        <label className="col-sm-2 col-form-label" htmlFor="password">Contraseña</label>
+                        <input className="form-control col-sm-10" type="password" name="password" value={password} onChange={handleInputChange}/>
                     </div>
                     <div>
-                        <label htmlFor="lastName">Apellido</label>
-                        <input type="text" name="lastName" value={lastName} onChange={handleInputChange}/>
-                    </div>
-                    <div>
-                        <label htmlFor="email">Correo electrónico</label>
-                        <input type="text" name="email" value={email} onChange={handleInputChange}/>
-                    </div>
-                    <div>
-                        <label htmlFor="password">Contraseña</label>
-                        <input type="password" name="password" value={password} onChange={handleInputChange}/>
-                    </div>
-                    <div>
-                        <button type="submit">Enviar</button>
+                        <button type="submit" className="btn">Enviar</button>
                     </div>
                 </form>
             </article>
