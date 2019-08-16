@@ -1,7 +1,7 @@
 const User = require ('../db/models/User.js');
 const router = require ('express').Router();
 const uuid = require ('uuid/v4');
-const passport = require ('passport')
+const passport = require ('passport');
 
 router.get('/', (req, res) => {
     User.findAll()
